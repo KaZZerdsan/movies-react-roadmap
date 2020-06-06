@@ -21,7 +21,6 @@ export default (query, pageNumber) => {
       defaultSettings.cancelToken = new axios.CancelToken(c => cancel = c)
       axios(`${apiUrl}${queryString}`, {...defaultSettings})
         .then(response => {
-          console.log(response.data)
           setMovies(response.data.results)
           setTotalPages(response.data.total_pages)
         })

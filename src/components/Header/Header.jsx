@@ -2,8 +2,11 @@ import React from 'react'
 import { HeaderContainer, HeaderGradLine, Search } from './Header.styled'
 
 const Header = props => {
-    const { setQuery } = props
-    const handleChange = (e) => setQuery(e.target.value)
+    const { setQuery, setPageNumber } = props
+    const handleChange = (e) => {
+      setQuery(e.target.value)
+      setPageNumber(1)
+    }
     return (
         <HeaderContainer>
             <Search placeholder='Искать здесь' onChange={e => handleChange(e)} />
